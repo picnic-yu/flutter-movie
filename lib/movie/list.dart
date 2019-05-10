@@ -62,8 +62,7 @@ class _MovieListState extends State<MovieList> with AutomaticKeepAliveClientMixi
                           Text("电影名称: ${mitem['title']}"),
                           Text("上映年份: ${mitem['year']}年"),
                           Text('电影类型: ${mitem['genres'].join(' ')}'),
-                          Text("电影类型: ${mitem['rating']['average']}分"),
-                          Text("电影类型: ${mitem['title']}"),
+                          Text("评分: ${mitem['rating']['average']}分"),
                         ],
                       ),
                     )
