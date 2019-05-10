@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './movie/list.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -39,7 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(icon: Icon(Icons.search),onPressed: (){},)
           ],
         ),
-        body: Text('33'),
+        body: TabBarView(
+          children: <Widget>[
+            MovieList(mt: 'in_theaters',),
+            MovieList(mt: 'coming_soon',),
+            MovieList(mt: 'top250',),
+          ],
+        ),
         bottomNavigationBar:Container(
           decoration: BoxDecoration(
             color: Colors.black
