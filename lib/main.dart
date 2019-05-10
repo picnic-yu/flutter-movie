@@ -38,7 +38,32 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Text('33'),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text('南川'),
+              accountEmail: Text('164005206@qq.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage('http://b-ssl.duitang.com/uploads/item/201706/22/20170622131955_h4eZS.thumb.700_0.jpeg'),
+              ),
+              decoration: BoxDecoration(
+                // 背景图片
+                
+                image: DecorationImage(
+                  fit:BoxFit.cover,
+                  image:NetworkImage('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557465057727&di=7676697988ddeff34e9f4012c8937f89&imgtype=0&src=http%3A%2F%2Fimg17.3lian.com%2Fd%2Ffile%2F201702%2F10%2F6649171de5aa01019848317d778a3410.jpg') )
+              ),
+            ),
+            ListTile(title: Text('用户反馈'),trailing: Icon(Icons.feedback),),
+            ListTile(title: Text('系统设置'),trailing: Icon(Icons.settings),),
+            ListTile(title: Text('我要发布'),trailing: Icon(Icons.send),),
+            Divider(),
+            ListTile(title: Text('注销'),trailing: Icon(Icons.exit_to_app),)
+          ],
+        ),
+      ),
     );
   }
 }
